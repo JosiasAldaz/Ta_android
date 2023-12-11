@@ -9,7 +9,7 @@ import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.ListRowPresenter
 import com.example.myapplication.R
 
-data class Movie(val title:String,val year: Int,val poster: String)
+data class Movie(val title:String,val year: Int,val poster: String,val videoUrl:String)
 class MainFragment:BrowseSupportFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,7 +23,8 @@ class MainFragment:BrowseSupportFragment() {
                 Movie(
                     "Title $it",
                     2023,
-                    "https://loremflickr.com/176/313/dog?lock=$it"
+                    "https://loremflickr.com/176/313/dog?lock=$it",
+                    "https://www.bing.com/videos/search?q=Sample+MP4+File&&view=detail&mid=972442854C3E5E37A06F972442854C3E5E37A06F&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3F%26q%3DSample%2BMP4%2BFile%26FORM%3DVDMHRS?lock=$it"
                 )
 
             })
