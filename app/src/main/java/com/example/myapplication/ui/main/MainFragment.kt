@@ -20,9 +20,11 @@ class MainFragment : BrowseSupportFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         title = getString(R.string.browse)
+        val categoryNames = arrayOf("Terror", "Tecnología", "Música")
+
         val rowsAdapter = ArrayObjectAdapter(ListRowPresenter())
-        (1..3).forEach { categoryId ->
-            val categoryTitle = "Category $categoryId"
+        (categoryNames.indices).forEach { categoryId ->
+            val categoryTitle = categoryNames[categoryId]
 
             val listRowAdapter = ArrayObjectAdapter(CardPresenter())
             listRowAdapter.addAll(0, (1..5).map {
